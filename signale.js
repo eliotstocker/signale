@@ -297,6 +297,11 @@ class Signale {
     return !this._disabled;
   }
 
+  endInteractive() {
+    this._interactive = false;
+    isPreviousLogInteractive = false;
+  }
+
   scope(...name) {
     if (name.length === 0) {
       throw new Error('No scope name was defined.');
