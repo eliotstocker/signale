@@ -244,7 +244,7 @@ class Signale {
   }
 
   _write(stream, message) {
-    if (this._interactive && isPreviousLogInteractive && stream.moveCursor) {
+    if (this._interactive && isPreviousLogInteractive && typeof stream.moveCursor === 'function') {
         stream.moveCursor(0, -1);
         stream.clearLine();
         stream.cursorTo(0);
